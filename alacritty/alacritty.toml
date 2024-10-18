@@ -1,0 +1,26 @@
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c",  "tmux attach || tmux"]
+
+[env]
+term = "xterm-256color"
+
+[scrolling]
+history = 500
+
+[window]
+decorations = "None"
+opacity = 0.72
+startup_mode = "Maximized"
+blur = true
+padding = {x=3, y=3}
+dynamic_padding = true
+
+[font]
+normal = {family = "JetBrains Mono", style="SemiBold"}
+size = 7
+
+[cursor]
+style = {shape = "Block", blinking="On"}
+blink_timeout = 0
+unfocused_hollow = false
