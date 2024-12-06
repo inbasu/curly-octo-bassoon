@@ -10,14 +10,6 @@ require("conform").setup({
             quiet = false,
             lsp_format = "fallback"
     },
-    formatters = {
-            black = {
-                prepend_args = {"--line-length", "120"}
-                },
-            isort = {
-                prepend_args = {"--profile", "black"}    
-            }
                 
-    }
 }) 
 

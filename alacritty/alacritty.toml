@@ -1,4 +1,4 @@
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["-l", "-c",  "tmux attach || tmux"]
 
@@ -24,3 +24,5 @@ size = 7
 style = {shape = "Block", blinking="On"}
 blink_timeout = 0
 unfocused_hollow = false
+
+[terminal]
