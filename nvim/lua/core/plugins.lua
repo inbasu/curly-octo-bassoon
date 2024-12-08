@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
         use "saadparwaiz1/cmp_luasnip"          -- for autocompletion
         --theme
         use 'kaicataldo/material.vim'
+        use 'aliqyan-21/darkvoid.nvim' 
   if packer_bootstrap then
     require('packer').sync()
   end
