@@ -6,7 +6,7 @@ args = ["-l", "-c",  "tmux attach || tmux"]
 term = "xterm-256color"
 
 [scrolling]
-history = 500
+history = 5000
 
 [window]
 decorations = "None"

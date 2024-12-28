@@ -1,7 +1,7 @@
 require('lint').linters_by_ft = {
   markdown = {'vale'},
   python = {'ruff', 'mypy' },
-  typescript = { 'ts_ls' },
+  typescript = { 'ts_ls', 'eslint' },
 }
 
 

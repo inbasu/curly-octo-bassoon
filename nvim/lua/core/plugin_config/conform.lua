@@ -5,7 +5,7 @@ require("conform").setup({
     typescript = { "prettier" },
     }, 
     format_on_save = {
-            timeout_ms = 1000,
+            timeout_ms = 5000,
             async = false,
             quiet = false,
             lsp_format = "fallback"
