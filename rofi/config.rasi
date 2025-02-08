@@ -1,0 +1,22 @@
+@theme "~/.config/rofi/themes/arc_dark_transparent_colors.rasi"
+ configuration {
+        modi: "drun";
+        kb-cancel: "Escape,Alt+d";
+        show-icons: true;
+        fixed-num-lines: false;
+        fake-transparency: true;
+        font: "JetBrainsMono NerdFont" 15";
+ }
+
+window {
+        anchor: north;
+        location: north;
+        y-offset: 33%;
+        width: 40%;
+        background-color: rgba(30, 30, 30, 0.8);
+        border: 0;
+}
+
+element selected.normal {
+        background-color: rgba(10, 10, 10, 0.5);
+}
