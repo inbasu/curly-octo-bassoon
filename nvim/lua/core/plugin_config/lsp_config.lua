@@ -17,7 +17,7 @@ require("lspconfig").gopls.setup {
 }
 
 -- Python
-require("lspconfig").pyright.setup {}
+require("lspconfig").ruff.setup ({})
 
 -- TS
 require("lspconfig").ts_ls.setup {}
