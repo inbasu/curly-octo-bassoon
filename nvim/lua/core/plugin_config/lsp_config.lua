@@ -1,25 +1,27 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-        ensure_installed={
-                "pyright",
-                "ruff", 
-                "ts_ls",
-                "eslint",
-                "clangd",
-        }
+    ensure_installed = {
+        "gopls",
+        "pyright",
+        "ruff",
+        "ts_ls",
+        "eslint",
+        "clangd",
+        "lua_ls",
+    }
 })
 
--- C 
+-- C
 require("lspconfig").clangd.setup {}
 
 -- Go
 require("lspconfig").gopls.setup {
-        capabilities = require('cmp_nvim_lsp').default_capabilities()
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
 }
 
 -- Python
-require("lspconfig").ruff.setup {    
-        settings = {
+require("lspconfig").ruff.setup {
+    settings = {
         args = {
             "--line-length=100",
         },
@@ -31,4 +33,5 @@ require("lspconfig").pyright.setup {}
 require("lspconfig").ts_ls.setup {}
 require("lspconfig").eslint.setup {}
 
-
+-- Lua
+require("lspconfig").lua_ls.setup {}
