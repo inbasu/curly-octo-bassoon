@@ -1,6 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
         ensure_installed={
+                "pyright",
                 "ruff", 
                 "ts_ls",
                 "eslint",
@@ -17,7 +18,14 @@ require("lspconfig").gopls.setup {
 }
 
 -- Python
-require("lspconfig").ruff.setup ({})
+require("lspconfig").ruff.setup {    
+        settings = {
+        args = {
+            "--line-length=100",
+        },
+    },
+}
+require("lspconfig").pyright.setup {}
 
 -- TS
 require("lspconfig").ts_ls.setup {}

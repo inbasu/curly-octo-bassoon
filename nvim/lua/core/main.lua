@@ -2,10 +2,13 @@
 vim.opt.showcmd = true
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
 
 -- tabs and sp	aces
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
 -- keymap
