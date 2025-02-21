@@ -319,7 +319,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill ~/Pictures/skadi.jpeg
+exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/skadi.jpeg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -431,7 +431,7 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # (plus the system information i3status finds out, if available)
 bar {
         
-        font pango: JetBrainsMono NerdFont 10
+        font pango: JetBrainsMono NerdFont 11
         mode hide
         modifier Mod1
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
