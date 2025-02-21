@@ -1,1 +1,8 @@
+# Ignores
 *
+./*
+/nvim/plugin
+# Includes
+!i3
+!alacritty
+!nvim
