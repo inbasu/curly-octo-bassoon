@@ -3,6 +3,7 @@
 ./*
 /nvim/plugin
 # Includes
-!i3
 !alacritty
+!i3
 !nvim
+!tmux
