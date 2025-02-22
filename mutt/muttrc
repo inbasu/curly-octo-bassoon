@@ -1,0 +1,19 @@
+set from = "just.me.juncy@gmail.com"
+set realname = "A1ice Ne4aeva"
+
+# IMAP settings
+set imap_user = "just.me.juncy@gmail.com"
+set imap_pass = "$GMAIL_KEY"
+
+# SMTP settings
+set smtp_url = "smtps://just.me.juncy@smtp.gmail.com"
+set smtp_pass = "$GMAIL_KEY"
+
+# Remote Gmail folders
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
+
+color normal white default
