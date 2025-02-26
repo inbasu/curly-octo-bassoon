@@ -105,7 +105,6 @@ bindcode $mod+m+19    move container to workspace  $ws10
 ######################################
 # keybindings for different actions: #
 ######################################
-exec_always "setxkbmap -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
@@ -254,12 +253,6 @@ assign [class="TelegramDesktop"] $ws8
 assign [class="Obsidian"] $ws10
 
 
-# automatic set focus new window if it opens on another workspace than the current:
-# for_window [class=Xfce4-terminal] focus
-# for_window [class=Thunar] focus
-# for_window [class=Thunderbird] focus
-# for_window [class=TelegramDesktop] focus
-
 ##############
 # compositor #
 ##############
@@ -268,15 +261,6 @@ assign [class="Obsidian"] $ws10
 # uncomment one of them to be used
 # options could need changes, related to used GPU and drivers.
 # to find the right setting consult the archwiki or ask at the forum.
-#
-# xcompmgr: https://wiki.archlinux.org/title/Xcompmgr
-# manpage: https://man.archlinux.org/man/xcompmgr.1.en
-# install xcompmgr package to use it (yay -S xcompmgr)
-#exec --no-startup-id xcompmgr -C -n &
-# or an more specialized config like this:
-#exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-#
-# or:
 #
 # picom: https://wiki.archlinux.org/title/Picom
 # manpage: https://man.archlinux.org/man/picom.1.en
@@ -304,11 +288,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id dex --autostart --environment i3
 
-# num lock activated
-#exec --no-startup-id numlockx on
-
-# configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-#exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
+# configure multiple keyboard layouts and hotkey to switch (Alt+Shift in this example)
+exec "setxkbmap -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 
 # start conky:
 #exec_always --no-startup-id conky
@@ -318,7 +299,6 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
-# exec --no-startup-id sleep 2 && nitrogen --restore
 exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/skadi.jpeg
 
 # set powersavings for display:
@@ -408,19 +388,20 @@ set $darkbluetrans	#08052be6
 set $darkblue		#08052b
 set $lightblue		#5294e2
 set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
+set $white		    #ffffff
+set $black		    #000000
+set $purple		    #e345ff
 set $darkgrey		#383c4a
-set $grey		#b0b5bd
+set $grey		    #b0b5bd
 set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
+set $transparent    #00000000
 
 # define colors for windows:
-#class		        	border		bground		text		indicator	child_border
-client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	$mediumgrey
-client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
-client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
+#class  		        	border		bground		text		indicator	    child_border
+client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	    $mediumgrey
+client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	    $darkgrey
+client.focused_inactive		$darkblue	$darkblue	$grey		$black		    $black
 client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
 ############################################
@@ -435,60 +416,23 @@ bar {
         mode hide
         modifier Mod1
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position top
-	    	i3bar_command i3bar --transparency
-# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-# reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    tray_output none 
-		    tray_padding 0
-
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-strip_workspace_numbers yes
-##strip_workspace_name no
-
-		    colors {
+	    position top
+	    i3bar_command i3bar --transparency
+		tray_output none 
+		tray_padding 0
+        strip_workspace_numbers yes
+		colors {
 		    separator          $purple
-		    background         $black
+		    background         $transparent
 		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	none	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	none    $black	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+
+#                          		border 		        bg		    txt		    indicator
+    		focused_workspace	none	   	        $grey		$darkgrey	$purple
+    		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+    		inactive_workspace	none                $black	    $grey		$purple
+    		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
 	}
 }
-
-# you can add different bars for multidisplay setups on each display:
-# set output HDMI-0 to the display you want the bar, --transparency can be set.
-# Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
-# https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-# #08052be6 --> e6=90%
-
-# bar {
-#         font pango: JetBrainsMono NerdFont 10
-#         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#         i3bar_command i3bar --transparency
-#         output HDMI-0
-#         position bottom
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-#strip_workspace_numbers yes
-##strip_workspace_name no
-#
-#	colors {
-#		separator          $purple
-#		background         $darkbluetrans
-#        	statusline         $white
-#					border		bg		txt		indicator
-#		focused_workspace	$lighterblue	$lighterblue	$darkblue	$purple
-#		active_workspace	$lightdblue	$lightdblue	$darkblue	$purple
-#		inactive_workspace	$darkblue	$darkblue	$lightdblue	$purple
-#		urgent_workspace	$urgentred	$urgentred	$white		$purple
-#	}
-#}
 
 #####################################
 # Application menu handled by rofi: #
