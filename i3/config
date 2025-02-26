@@ -423,7 +423,7 @@ bar {
         strip_workspace_numbers yes
 		colors {
 		    separator          $purple
-		    background         $transparent
+		    background         $black
 		    statusline         $white
 
 #                          		border 		        bg		    txt		    indicator
