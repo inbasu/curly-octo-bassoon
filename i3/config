@@ -290,7 +290,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dex --autostart --environment i3
 
 # configure multiple keyboard layouts and hotkey to switch (Alt+Shift in this example)
-exec "setxkbmap -layout us,ru -variant ,, -option grp:alt_shift_toggle"
+exec_always "setxkbmap -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 
 # start conky:
 #exec_always --no-startup-id conky
