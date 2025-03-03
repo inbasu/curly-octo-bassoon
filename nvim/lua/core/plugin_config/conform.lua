@@ -12,7 +12,6 @@ require("conform").setup({
                 "max-nested-blocks = 10",
                 "docstring-quotes = 'single'",
                 "inline-quotes = 'double'"
-
             },
         },
     },
