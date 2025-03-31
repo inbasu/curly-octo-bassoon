@@ -15,6 +15,9 @@ return require('packer').startup(function(use)
         run = ":TSUpdate"
     }
 
+    -- wiki
+    use "vimwiki/vimwiki"
+
     -- lsp
     use {
         "williamboman/mason.nvim",
@@ -28,6 +31,7 @@ return require('packer').startup(function(use)
     use "hrsh7th/cmp-buffer"       -- source for text in buffer
     use "L3MON4D3/LuaSnip"         -- snippet engine
     use "saadparwaiz1/cmp_luasnip" -- for autocompletion
+
     --theme
     use 'kaicataldo/material.vim'
     use 'aliqyan-21/darkvoid.nvim'
