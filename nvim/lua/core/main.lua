@@ -1,4 +1,4 @@
--- base
+--> base
 vim.opt.showcmd = true
 vim.opt.number = true
 vim.opt.relativenumber = true
