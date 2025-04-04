@@ -34,19 +34,6 @@ workspace_layout default
 #border indicator on windows:
 default_border pixel 0
 
-# thin borders
-# hide_edge_borders both
-
-# Set inner/outer gaps
-# gaps inner 6
-# gaps outer 3
-
-# show window title bars (not officially supported with i3gaps)
-#default_border normal
-
-# window title alignment
-#title_align center
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -78,37 +65,12 @@ bindcode $mod+m+17    move container to workspace  $ws8
 bindcode $mod+m+18    move container to workspace  $ws9
 bindcode $mod+m+19    move container to workspace  $ws10
 
-# resize window (you can also use the mouse for that):
-#mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
-# Pressing left will shrink the window's width.
-# Pressing right will grow the window's width.
-# Pressing up will shrink the window's height.
-# Pressing down will grow the window's height.
-#        bindsym h resize shrink width 10 px or 10 ppt
-#        bindsym j resize grow height 10 px or 10 ppt
-#        bindsym k resize shrink height 10 px or 10 ppt
-#        bindsym l resize grow width 10 px or 10 ppt
-
-# same bindings, but for the arrow keys
-#        bindsym Left resize shrink width 10 px or 10 ppt
-#        bindsym Down resize grow height 10 px or 10 ppt
-#        bindsym Up resize shrink height 10 px or 10 ppt
-#        bindsym Right resize grow width 10 px or 10 ppt
-
-# back to normal: Enter or Escape
-#	     bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
-
-#bindsym $mod+r mode "resize"
-
 ######################################
 # keybindings for different actions: #
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return  exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -246,12 +208,9 @@ set $ws10 "10"
 
 # bind program to workspace and focus to them on startup:
 assign [class="Brave"] $ws1
-assign [class="Thunar"] $ws3
 assign [class="Alacritty"] $ws4
-assign [class="Koodo"] $ws5
-assign [class="Discord"] $ws9
 assign [class="TelegramDesktop"] $ws8
-assign [class="Obsidian"] $ws10
+assign [class="obsidian"] $ws10
 
 
 ##############
@@ -439,25 +398,9 @@ bar {
 # Application menu handled by rofi: #
 #####################################
 
-## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
-
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 		-config ~/.config/rofi/config.rasi
 
-#bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
-#		-config ~/.config/rofi/rofidmenu.rasi
-
-## rofi bindings for window menu ($mod+t /F10 optional disabled)
-
 bindsym $mod+t exec --no-startup-id rofi -show window \
 		-config ~/.config/rofi/rofidmenu.rasi
-
-## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
-
-#exec --no-startup-id greenclip daemon>/dev/null
-#bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
-#		-config ~/.config/rofi/rofidmenu.rasi
-# Review the lines below and append to ~/.config/i3/config
-
-
 
