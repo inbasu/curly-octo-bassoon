@@ -1,6 +1,7 @@
 require('lint').linters_by_ft = {
     python = { 'ruff', 'mypy' },
-    typescript = { 'eslint' },
+    typescript = { 'ts_ls', 'eslint' },
+    go = {}
 }
 
 

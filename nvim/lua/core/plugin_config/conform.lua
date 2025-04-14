@@ -9,8 +9,8 @@ require("conform").setup({
         ruff_format = {
             append_args = {
                 "--config",
-                "line-length = 119",
-                "max-nested-blocks = 10",
+                "line-length = 100",
+                "max-nested-blocks = 5",
                 "docstring-quotes = 'single'",
                 "inline-quotes = 'double'"
             },

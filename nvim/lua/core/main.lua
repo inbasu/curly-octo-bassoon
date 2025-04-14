@@ -1,4 +1,4 @@
---> base
+-- base
 vim.opt.showcmd = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -18,6 +18,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Explore)
 -- remap Caps Lock
 vim.api.nvim_create_autocmd("VimEnter", { command = "silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'", })
 vim.api.nvim_create_autocmd("VimLeave", { command = "!xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'", })
+
+
 -- color
 function ColorVim(color)
     color = color or "darkvoid"
@@ -28,3 +30,21 @@ function ColorVim(color)
 end
 
 ColorVim()
+
+-- diagnostic
+vim.diagnostic.config {
+    underline = true,
+    signs = true,
+    severity_sort = true,
+    update_in_insert = false,
+    virtual_lines = {
+        only_current_line = true,
+        highlight_whole_line = false,
+    },
+    --    virtual_text = {
+    --        prefix = "",
+    --        severity = nil,
+    --        source = "if_many",
+    --        format = nil,
+    --    }
+}
