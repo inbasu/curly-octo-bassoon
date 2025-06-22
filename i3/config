@@ -207,9 +207,10 @@ set $ws10 "10"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
-assign [class="firefox"] $ws1
+assign [class="Brave"] $ws1
 assign [class="Alacritty"] $ws4
 assign [class="TelegramDesktop"] $ws8
+assign [class="discord"] $ws9
 assign [class="obsidian"] $ws10
 
 
