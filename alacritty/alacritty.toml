@@ -18,7 +18,7 @@ dynamic_padding = true
 
 [font]
 normal = {family = "JetBrainsMono NerdFont", style="SemiBold"}
-size = 7
+size = 10
 
 [cursor]
 style = {shape = "Block", blinking="On"}
