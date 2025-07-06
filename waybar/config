@@ -1,0 +1,16 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mode": "overlay",
+    "start_hidden": true,
+    "passthrough": true,
+    "modules-left": ["hyprland/workspaces", "sway/mode"],
+    "modules-center": [],
+    "modules-right": ["clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    }
+}
